@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#000000" />
+  <title>Abu Bokkor — Full Stack Developer & AI Engineer</title>
+  <meta name="description"
+    content="Portfolio of Md. Abu Bokkor, Full Stack Developer & AI Engineer specialized in Full Stack, AI, SaaS, and Research." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <!-- Fixed Background Canvas for 199-Frame HD Scroll Animation -->
+  <div class="canvas-container">
+    <canvas id="hero-canvas"></canvas>
+  </div>
+
+  <!-- Pure Liquid Glass SVG Refraction Filter -->
+  <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+    <filter id="liquid-filter" x="0" y="0" width="100%" height="100%" filterUnits="objectBoundingBox">
+      <feTurbulence type="fractalNoise" baseFrequency="0.003 0.007" numOctaves="1" result="turbulence" />
+      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="20" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
+
+  <!-- Main Scrollable Content Overlay (100% Transparent) -->
+  <div class="content-wrapper">
+
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="#" class="logo">
+          <span class="logo-accent">A</span>
+          <span class="logo-text">Abu Bokkor</span>
+        </a>
+        <nav class="nav-links">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#experience" class="nav-link">Experience</a>
+        </nav>
+        <a href="#contact" class="btn-nav-contact">Contact Me</a>
+      </div>
+    </header>
+
+    <!-- Hero Section (Matches Reference Image Layout) -->
+    <section id="hero" class="hero-section">
+      <div class="hero-container-split">
+
+        <!-- Hero Left Column -->
+        <div class="hero-left-col">
+          <div class="hero-eyebrow">
+            <span class="eyebrow-bullet">•</span>
+            <span>FULL STACK DEVELOPER &amp; AI ENGINEER</span>
+          </div>
+
+          <h1 class="hero-headline">
+            I build software<br>
+            that solves <span class="text-orange">real<br>problems.</span>
+          </h1>
+
+          <div class="hero-cta-group">
+            <a href="https://www.linkedin.com/in/md-abubokkor/" target="_blank" rel="noopener noreferrer"
+              class="btn-hire">
+              <span>Hire Me</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="https://md-abubokkor.netlify.app/Abu_Bokkor_CV.pdf" target="_blank" rel="noopener noreferrer"
+              class="btn-cv">
+              <span>See CV</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Center Space: Left empty for the background scroll video of the creator -->
+        <div class="hero-center-space"></div>
+
+        <!-- Hero Right Column: WHAT I BUILD -->
+        <div class="hero-right-col">
+          <div class="focus-header">
+            <span class="focus-title">WHAT I BUILD</span>
+            <div class="focus-line"></div>
+          </div>
+
+          <div class="focus-items">
+            <!-- Focus 01 -->
+            <div class="focus-item">
+              <div class="focus-icon-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <div class="focus-content">
+                <span class="focus-num">01</span>
+                <span class="focus-label">Full Stack</span>
+              </div>
+            </div>
+
+            <!-- Focus 02 -->
+            <div class="focus-item">
+              <div class="focus-icon-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2a4 4 0 0 0-4 4v1a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4z"></path>
+                  <path d="M6 10a6 6 0 0 0 12 0"></path>
+                  <path d="M9 16v3a3 3 0 0 0 6 0v-3"></path>
+                </svg>
+              </div>
+              <div class="focus-content">
+                <span class="focus-num">02</span>
+                <span class="focus-label">AI Systems</span>
+              </div>
+            </div>
+
+            <!-- Focus 03 -->
+            <div class="focus-item">
+              <div class="focus-icon-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z">
+                  </path>
+                  <path
+                    d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z">
+                  </path>
+                </svg>
+              </div>
+              <div class="focus-content">
+                <span class="focus-num">03</span>
+                <span class="focus-label">SaaS Products</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Floating Glass Stats Bar (From Reference Image) -->
+      <div class="hero-bottom-wrap">
+        <div class="hero-stats-glass-bar">
+          <!-- Stat 1: 200+ Projects -->
+          <div class="stat-cell">
+            <div class="stat-icon-circle">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+            </div>
+            <div class="stat-info">
+              <div class="stat-number">200+</div>
+              <div class="stat-title">PROJECTS</div>
+            </div>
+          </div>
+
+          <div class="stat-divider"></div>
+
+          <!-- Stat 2: 4+ Years Experience -->
+          <div class="stat-cell">
+            <div class="stat-icon-circle">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </div>
+            <div class="stat-info">
+              <div class="stat-number">4+</div>
+              <div class="stat-title">YEARS EXPERIENCE</div>
+            </div>
+          </div>
+
+          <div class="stat-divider"></div>
+
+          <!-- Stat 3: YouTube Channel Abu Bokkor Dev -->
+          <a href="https://www.youtube.com/@AbuBokkorDev" target="_blank" rel="noopener noreferrer"
+            class="stat-cell stat-link-cell">
+            <div class="stat-icon-circle yt-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </div>
+            <div class="stat-info">
+              <div class="stat-channel-name">
+                <span>Abu Bokkor Dev</span>
+                <span class="ext-icon">↗</span>
+              </div>
+              <div class="stat-title">YOUTUBE CHANNEL</div>
+            </div>
+          </a>
+
+          <div class="stat-divider"></div>
+
+          <!-- Stat 4: 5.0 Rating -->
+          <div class="stat-cell">
+            <div class="stat-icon-circle star-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+            </div>
+            <div class="stat-info">
+              <div class="stat-number star-number">5.0 ★</div>
+              <div class="stat-title">RATING</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="skills" class="section-block">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-tag">◆ TECH_STACK</div>
+          <h2 class="section-title">Tools of the trade.</h2>
+          <p class="section-subtitle">A full-spectrum toolkit for building intelligent, scalable applications.</p>
+        </div>
+
+        <div class="tech-grid">
+          <!-- Languages -->
+          <div class="tech-card">
+            <div class="tech-category">FIELD: LANGUAGES</div>
+            <div class="tech-tags">
+              <span class="tag">C++</span>
+              <span class="tag">Python</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </div>
+
+          <!-- Frontend -->
+          <div class="tech-card">
+            <div class="tech-category">FIELD: FRONTEND</div>
+            <div class="tech-tags">
+              <span class="tag">React.js</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">Bootstrap</span>
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="tech-card">
+            <div class="tech-category">FIELD: BACKEND</div>
+            <div class="tech-tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">Express.js</span>
+              <span class="tag">REST APIs</span>
+              <span class="tag">Flask</span>
+            </div>
+          </div>
+
+          <!-- Database -->
+          <div class="tech-card">
+            <div class="tech-category">FIELD: DATABASE</div>
+            <div class="tech-tags">
+              <span class="tag">MongoDB</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">Pinecone</span>
+              <span class="tag">ChromaDB</span>
+              <span class="tag">Vector DB</span>
+            </div>
+          </div>
+
+          <!-- AI / ML -->
+          <div class="tech-card tech-card-highlight">
+            <div class="tech-category">FIELD: AI / ML</div>
+            <div class="tech-tags">
+              <span class="tag tag-accent">TensorFlow</span>
+              <span class="tag tag-accent">LangChain</span>
+              <span class="tag tag-accent">RAG</span>
+              <span class="tag tag-accent">NLP</span>
+              <span class="tag tag-accent">LLMs</span>
+              <span class="tag tag-accent">Deep Learning</span>
+              <span class="tag tag-accent">OpenCV</span>
+            </div>
+          </div>
+
+          <!-- Cloud & Tools -->
+          <div class="tech-card">
+            <div class="tech-category">FIELD: CLOUD &amp; TOOLS</div>
+            <div class="tech-tags">
+              <span class="tag">AWS</span>
+              <span class="tag">Firebase</span>
+              <span class="tag">Vercel</span>
+              <span class="tag">Netlify</span>
+              <span class="tag">Git</span>
+              <span class="tag">GitHub</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Core Competencies Bar -->
+        <div class="competencies-card">
+          <div class="comp-header">
+            <span class="comp-title">CORE_COMPETENCIES</span>
+            <span class="comp-badge">DSA &amp; ARCHITECTURE</span>
+          </div>
+          <div class="comp-list">
+            <span>Data Structures &amp; Algorithms</span>
+            <span class="sep">•</span>
+            <span>OOP</span>
+            <span class="sep">•</span>
+            <span>System Design</span>
+            <span class="sep">•</span>
+            <span>Problem Solving</span>
+            <span class="sep">•</span>
+            <span>REST API Design</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work History & Experience -->
+    <section id="experience" class="section-block">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-tag">◆ WORK_HISTORY</div>
+          <h2 class="section-title">Experience that speaks volumes.</h2>
+          <p class="section-subtitle">From freelance to content creation, always building.</p>
+        </div>
+
+        <div class="timeline-list">
+          <!-- Experience 1 -->
+          <div class="timeline-item">
+            <div class="timeline-meta">
+              <span class="time-badge">JAN 2021 — PRESENT</span>
+              <span class="role-tag">ROLE: FREELANCE</span>
+            </div>
+            <div class="timeline-body">
+              <div class="role-header">
+                <h3 class="role-title">Freelance Full Stack Developer</h3>
+                <span class="rating-pill">★ 5.0 RATING</span>
+              </div>
+              <div class="role-company">FIVERR — REMOTE GLOBAL CLIENTS</div>
+              <p class="role-desc">
+                Completed <strong>100+ web development projects</strong> for clients in USA, UK, Canada, and worldwide.
+                Maintaining consistent 5-star rating across all client engagements.
+              </p>
+            </div>
+          </div>
+
+          <!-- Experience 2 -->
+          <div class="timeline-item">
+            <div class="timeline-meta">
+              <span class="time-badge">JUL 2024 — PRESENT</span>
+              <span class="role-tag">ROLE: CONTENT CREATOR</span>
+            </div>
+            <div class="timeline-body">
+              <div class="role-header">
+                <h3 class="role-title">YouTube Content Creator</h3>
+                <a href="https://www.youtube.com/@AbuBokkorDev" target="_blank" rel="noopener noreferrer"
+                  class="link-pill">
+                  @AbuBokkorDev ↗
+                </a>
+              </div>
+              <div class="role-company">ABU BOKKOR DEV — REMOTE</div>
+              <ul class="role-bullets">
+                <li>Create technical tutorials on Web Development, Python, C++, and AI for the developer community.</li>
+                <li>Developed skills in content scripting, video creation, and explaining complex technical concepts.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="timeline-item timeline-edu">
+            <div class="timeline-meta">
+              <span class="time-badge">SEP 2022 — JULY 2026</span>
+              <span class="role-tag">EDUCATION: VU</span>
+            </div>
+            <div class="timeline-body">
+              <h3 class="role-title">Bachelor of Science in Computer Science and Engineering</h3>
+              <div class="role-company">Varendra University • Rajshahi, Bangladesh</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selected Works / Projects -->
+    <section id="projects" class="section-block">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-tag">◆ SELECTED_WORKS</div>
+          <h2 class="section-title">Projects that make an impact.</h2>
+          <p class="section-subtitle">From NASA challenges to AI-powered education platforms.</p>
+        </div>
+
+        <div class="projects-stack">
+          <!-- Featured Project 1: Safer Skies -->
+          <div class="project-featured-card">
+            <div class="proj-header-row">
+              <div class="proj-meta">
+                <span class="proj-id">PROJECT_01 // 2025</span>
+                <span class="award-pill">🏆 1ST RUNNER-UP • NASA SPACE APPS 2025 BD</span>
+              </div>
+              <span class="badge-nominee">GLOBAL NOMINEE</span>
+            </div>
+
+            <div class="proj-main-info">
+              <h3 class="proj-name">Safer Skies</h3>
+              <div class="proj-focus">AI ENVIRONMENTAL FORECASTING</div>
+              <p class="proj-summary">
+                Led 2-person team to <strong>1st Runner-up at NASA Space Apps Challenge 2025 Bangladesh</strong> with
+                Global Nomination. Integrated real-time weather &amp; satellite data with Machine Learning models and
+                developed an interactive React + D3.js analytical frontend.
+              </p>
+
+              <div class="proj-tech-row">
+                <span class="tech-chip">React</span>
+                <span class="tech-chip">Python</span>
+                <span class="tech-chip">ML</span>
+                <span class="tech-chip">D3.js</span>
+                <span class="tech-chip">APIs</span>
+              </div>
+
+              <div class="proj-links">
+                <a href="https://github.com/abubokkor-cse" target="_blank" rel="noopener noreferrer" class="proj-btn">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+                <a href="https://md-abubokkor.netlify.app/#" target="_blank" rel="noopener noreferrer"
+                  class="proj-btn proj-btn-demo">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  <span>Live Demo</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured Project 2: EduMind -->
+          <div class="project-featured-card">
+            <div class="proj-header-row">
+              <div class="proj-meta">
+                <span class="proj-id">PROJECT_02 // 2025</span>
+                <span class="award-pill">✨ 3D + VOICE AI VIRTUAL TEACHER</span>
+              </div>
+            </div>
+
+            <div class="proj-main-info">
+              <h3 class="proj-name">EduMind</h3>
+              <div class="proj-focus">AI VIRTUAL TEACHER PLATFORM</div>
+              <p class="proj-summary">
+                Built an AI-powered virtual teacher with <strong>3D interactive avatars and real-time voice-based
+                  learning</strong> in Bengali and English. Implemented personalized learning pathways, smart quiz
+                generation, and offline-friendly WebGL rendering.
+              </p>
+
+              <div class="proj-tech-row">
+                <span class="tech-chip">JavaScript</span>
+                <span class="tech-chip">Three.js</span>
+                <span class="tech-chip">AI APIs</span>
+                <span class="tech-chip">WebGL</span>
+              </div>
+
+              <div class="proj-links">
+                <a href="https://github.com/abubokkor-cse" target="_blank" rel="noopener noreferrer" class="proj-btn">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+                <a href="https://md-abubokkor.netlify.app/#" target="_blank" rel="noopener noreferrer"
+                  class="proj-btn proj-btn-demo">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  <span>Live Demo</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Credentials & Certifications -->
+    <section id="credentials" class="section-block">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-tag">◆ CREDENTIALS</div>
+          <h2 class="section-title">Certified and recognized.</h2>
+          <p class="section-subtitle">Continuous learning, validated by industry leaders.</p>
+        </div>
+
+        <div class="credentials-grid">
+          <div class="cert-card">
+            <div class="cert-ref">REFCERT-001</div>
+            <h3 class="cert-title">Web Development - MERN Stack</h3>
+            <div class="cert-meta">Apna College • 2024</div>
+            <a href="https://www.apnacollege.in/certificate_v2/6716395d4c764ca4230ca8c7/user/66b0c3b8a884060aec0a22c9"
+              target="_blank" rel="noopener noreferrer" class="cert-link">View Certificate ↗</a>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-ref">REFCERT-002</div>
+            <h3 class="cert-title">Data Structures &amp; Algorithms (C++)</h3>
+            <div class="cert-meta">Apna College • 2024</div>
+            <span class="cert-link">Verified ↗</span>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-ref">REFCERT-003</div>
+            <h3 class="cert-title">SQL (Intermediate)</h3>
+            <div class="cert-meta">HackerRank • 2024</div>
+            <a href="https://www.hackerrank.com/certificates/9fde3a0c41cb" target="_blank" rel="noopener noreferrer"
+              class="cert-link">View Certificate ↗</a>
+          </div>
+
+          <div class="cert-card cert-highlight">
+            <div class="cert-top-badge">◆ 3RD PRIZE WINNER</div>
+            <div class="cert-ref">REFCERT-004</div>
+            <h3 class="cert-title">Generative AI with Agentic AI</h3>
+            <div class="cert-meta">AgentX - NetCom Learning • 2025</div>
+            <a href="https://netcom-portal.s3.amazonaws.com/learner-portal-365/certificates/1760856413994_2629526_128166_cert.pdf"
+              target="_blank" rel="noopener noreferrer" class="cert-link">View Certificate ↗</a>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-ref">REFCERT-005</div>
+            <h3 class="cert-title">Prompt Engineering (MS 365 Copilot)</h3>
+            <div class="cert-meta">Microsoft Learning • 2025</div>
+            <a href="https://learn.microsoft.com/api/achievements/share/en-us/MdAbuBokkor-0668/9YMHPFRU?sharingId=FBEEDD83BA446276"
+              target="_blank" rel="noopener noreferrer" class="cert-link">View Certificate ↗</a>
+          </div>
+
+          <div class="cert-card cert-highlight">
+            <div class="cert-top-badge">◆ GLOBAL NOMINEE</div>
+            <div class="cert-ref">REFCERT-006</div>
+            <h3 class="cert-title">NASA Space Apps Challenge 2025</h3>
+            <div class="cert-meta">NASA • 2025</div>
+            <a href="https://drive.google.com/file/d/1TZblIahEn_iGU-filkZeItwNXd_qnb4x/view?usp=sharing" target="_blank"
+              rel="noopener noreferrer" class="cert-link">View Certificate ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-block contact-block">
+      <div class="section-container">
+        <div class="contact-card-wrap">
+          <div class="contact-info-col">
+            <div class="section-tag">+ CONTACT</div>
+            <h2 class="contact-title">Let's build<br><span class="text-orange">something great</span><br>together.</h2>
+            <p class="contact-subtitle">
+              Available for freelance projects, collaborations, and full-time opportunities.
+            </p>
+
+            <div class="contact-details-list">
+              <div class="detail-item">
+                <span class="detail-lbl">EMAIL</span>
+                <a href="mailto:mdabubokkor@icloud.com" class="detail-val">mdabubokkor@icloud.com</a>
+              </div>
+              <div class="detail-item">
+                <span class="detail-lbl">PHONE</span>
+                <a href="tel:+8801774757994" class="detail-val">+880 1774 757994</a>
+              </div>
+              <div class="detail-item">
+                <span class="detail-lbl">LOCATION</span>
+                <span class="detail-val">Rajshahi, Bangladesh</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-lbl">STATUS</span>
+                <span class="detail-val status-val">
+                  <span class="status-dot"></span> AVAILABLE FOR HIRE
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-col">
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+              <div class="form-group">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" required placeholder="Your name" class="form-input" />
+              </div>
+              <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" required placeholder="you@example.com" class="form-input" />
+              </div>
+              <div class="form-group">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" id="subject" required placeholder="Project inquiry..." class="form-input" />
+              </div>
+              <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" rows="4" required placeholder="Tell me about your project..."
+                  class="form-input form-textarea"></textarea>
+              </div>
+              <button type="submit" class="btn-hire form-submit-btn">
+                <span>Send Message</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Space -->
+    <footer class="footer-section">
+      <div class="section-container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <span class="logo-accent">A</span> Abu Bokkor.
+            </div>
+            <div class="footer-role">FULL STACK DEVELOPER &amp; AI ENGINEER</div>
+            <div class="footer-avail">◆ AVAILABLE FOR WORK</div>
+          </div>
+
+          <div class="footer-links-col">
+            <div class="footer-col-title">NAVIGATION</div>
+            <a href="#about" class="footer-link">About</a>
+            <a href="#skills" class="footer-link">Skills</a>
+            <a href="#projects" class="footer-link">Projects</a>
+            <a href="#experience" class="footer-link">Experience</a>
+          </div>
+
+          <div class="footer-links-col">
+            <div class="footer-col-title">CONNECT</div>
+            <a href="https://linkedin.com/in/md-abubokkor" target="_blank" rel="noopener noreferrer"
+              class="footer-link">LinkedIn</a>
+            <a href="https://www.youtube.com/@AbuBokkorDev" target="_blank" rel="noopener noreferrer"
+              class="footer-link">YouTube</a>
+            <a href="https://github.com/abubokkor-cse" target="_blank" rel="noopener noreferrer"
+              class="footer-link">GitHub</a>
+            <a href="https://facebook.com/abubokkor.cse" target="_blank" rel="noopener noreferrer"
+              class="footer-link">Facebook</a>
+          </div>
+
+          <div class="footer-links-col">
+            <div class="footer-col-title">CONTACT</div>
+            <a href="mailto:mdabubokkor@icloud.com" class="footer-link">mdabubokkor@icloud.com</a>
+            <span class="footer-link">+880 1774 757994</span>
+            <span class="footer-link">Rajshahi, Bangladesh</span>
+          </div>
+        </div>
+
+        <div class="footer-bottom-row">
+          <p>©2025 MD. ABU BOKKOR. ALL RIGHTS RESERVED.</p>
+          <p class="footer-signature">DESIGNED WITH PASSION, BUILT WITH CODE.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>

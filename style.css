@@ -1,0 +1,1296 @@
+:root {
+  --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --color-bg: #000000;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, 0.85);
+  --color-text-muted: rgba(255, 255, 255, 0.5);
+  --color-orange: #ff5722;
+  --color-orange-glow: #ff6b35;
+  --color-orange-gradient: linear-gradient(135deg, #ff6b35 0%, #f4511e 100%);
+  --header-height: 70px;
+
+  /* Pure Liquid Glass System Tokens */
+  --liquid-glass-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.015) 50%, rgba(255, 255, 255, 0.04) 100%);
+  --liquid-glass-border: 1px solid rgba(255, 255, 255, 0.14);
+  --liquid-glass-shadow: inset 1.5px 1.5px 2px 0 rgba(255, 255, 255, 0.45), inset -1.5px -1.5px 2px 0 rgba(255, 255, 255, 0.12), 0 12px 36px 0 rgba(0, 0, 0, 0.45);
+  --liquid-glass-shadow-hover: inset 2px 2px 3px 0 rgba(255, 255, 255, 0.75), inset -2px -2px 3px 0 rgba(255, 255, 255, 0.2), 0 18px 45px 0 rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 87, 34, 0.25);
+  --liquid-glass-blur: blur(16px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  width: 100%;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-primary);
+  overflow-x: hidden;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* ==========================================================================
+   Header (Solid Pure Black Background - Above Video Canvas)
+   ========================================================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 100;
+  background: #000000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  align-items: center;
+}
+
+.nav-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.logo-accent {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: var(--color-orange);
+  font-family: var(--font-primary);
+  line-height: 1;
+}
+
+.logo-text {
+  color: #ffffff;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.btn-nav-contact {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 1.35rem;
+  border-radius: 8px;
+  background: var(--liquid-glass-gradient);
+  border: var(--liquid-glass-border);
+  box-shadow: var(--liquid-glass-shadow);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
+}
+
+.btn-nav-contact:hover {
+  border-color: var(--color-orange);
+  box-shadow: var(--liquid-glass-shadow-hover);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   Fixed Canvas Background Animation (Starts BELOW the Header)
+   ========================================================================== */
+.canvas-container {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - var(--header-height));
+  height: calc(100dvh - var(--header-height));
+  pointer-events: none;
+  z-index: 1;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+#hero-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ==========================================================================
+   Main Content Layer (100% Transparent)
+   ========================================================================== */
+.content-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  padding-top: var(--header-height);
+}
+
+.section-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  width: 100%;
+}
+
+.text-orange {
+  color: var(--color-orange);
+  display: inline;
+}
+
+/* Text Shadows for High Legibility over Video */
+h1,
+h2,
+h3,
+.hero-headline,
+.focus-title,
+.focus-label,
+.stat-number,
+.stat-channel-name {
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.9), 0 4px 32px rgba(0, 0, 0, 0.7);
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero-section {
+  min-height: calc(100vh - var(--header-height));
+  min-height: calc(100dvh - var(--header-height));
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-container-split {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.15fr 0.9fr 1fr;
+  align-items: center;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+/* Hero Left Column */
+.hero-left-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--color-orange);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.4rem;
+}
+
+.eyebrow-bullet {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.hero-headline {
+  font-size: clamp(2.6rem, 5.2vw, 4.4rem);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  color: #ffffff;
+  margin-bottom: 2.2rem;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.btn-hire {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.8rem;
+  background: var(--color-orange-gradient);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 12px;
+  text-decoration: none;
+  border: none;
+  box-shadow: 0 8px 24px rgba(255, 87, 34, 0.45), inset 1px 1px 1.5px rgba(255, 255, 255, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-hire:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(255, 87, 34, 0.65);
+}
+
+.btn-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.8rem;
+  background: var(--liquid-glass-gradient);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 12px;
+  text-decoration: none;
+  border: var(--liquid-glass-border);
+  box-shadow: var(--liquid-glass-shadow);
+  backdrop-filter: var(--liquid-glass-blur);
+  -webkit-backdrop-filter: var(--liquid-glass-blur);
+  transition: all 0.25s ease;
+}
+
+.btn-cv:hover {
+  box-shadow: var(--liquid-glass-shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* Center space left transparent for middle subject */
+.hero-center-space {
+  min-height: 100px;
+  pointer-events: none;
+}
+
+/* Hero Right Column: WHAT I BUILD */
+.hero-right-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+  padding-left: 2rem;
+}
+
+.focus-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.8rem;
+}
+
+.focus-title {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-orange);
+  letter-spacing: 0.12em;
+}
+
+.focus-line {
+  width: 40px;
+  height: 2px;
+  background: var(--color-orange);
+}
+
+.focus-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  width: 100%;
+}
+
+.focus-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* Liquid Glass Icon Box */
+.focus-icon-box {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: var(--liquid-glass-gradient);
+  border: var(--liquid-glass-border);
+  box-shadow: var(--liquid-glass-shadow);
+  backdrop-filter: var(--liquid-glass-blur);
+  -webkit-backdrop-filter: var(--liquid-glass-blur);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-orange);
+  flex-shrink: 0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.focus-item:hover .focus-icon-box {
+  transform: scale(1.05);
+  box-shadow: var(--liquid-glass-shadow-hover);
+}
+
+.focus-content {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.focus-num {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-orange);
+}
+
+.focus-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  line-height: 1.35;
+}
+
+/* ==========================================================================
+   Hero Bottom Pure Liquid Glass Stats Bar
+   ========================================================================== */
+.hero-bottom-wrap {
+  max-width: 1320px;
+  margin: 1.5rem auto 0;
+  padding: 0 2.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  z-index: 5;
+}
+
+.hero-stats-glass-bar {
+  width: 100%;
+  background: var(--liquid-glass-gradient);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: var(--liquid-glass-border);
+  border-radius: 24px;
+  padding: 1.3rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1.35fr auto 1fr;
+  align-items: center;
+  box-shadow: var(--liquid-glass-shadow);
+  transition: box-shadow 0.3s ease;
+}
+
+.hero-stats-glass-bar:hover {
+  box-shadow: var(--liquid-glass-shadow-hover);
+}
+
+.stat-cell {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  text-decoration: none;
+}
+
+.stat-link-cell {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.stat-link-cell:hover {
+  opacity: 0.88;
+}
+
+/* Liquid Glass Icon Circles */
+.stat-icon-circle {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--liquid-glass-gradient);
+  border: var(--liquid-glass-border);
+  box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.4), inset -1px -1px 2px rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-orange);
+  flex-shrink: 0;
+}
+
+.stat-icon-circle.yt-icon {
+  color: #ff3333;
+}
+
+.stat-icon-circle.star-icon {
+  color: #ffb300;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.stat-number {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.star-number {
+  color: #ffb300;
+}
+
+.stat-channel-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.stat-channel-name .ext-icon {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.stat-title {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ==========================================================================
+   Section Blocks (Pure Liquid Glass Applied to All Cards)
+   ========================================================================== */
+.section-block {
+  padding: 7.5rem 0;
+  background: transparent;
+}
+
+.section-header {
+  margin-bottom: 3.5rem;
+}
+
+.section-tag {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-orange);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.6rem;
+}
+
+.section-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.75rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  max-width: 600px;
+}
+
+/* Pure Liquid Glass Tech Cards */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-card {
+  background: var(--liquid-glass-gradient);
+  backdrop-filter: var(--liquid-glass-blur);
+  -webkit-backdrop-filter: var(--liquid-glass-blur);
+  border: var(--liquid-glass-border);
+  box-shadow: var(--liquid-glass-shadow);
+  border-radius: 22px;
+  padding: 1.8rem;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 87, 34, 0.4);
+  box-shadow: var(--liquid-glass-shadow-hover);
+}
+
+.tech-card-highlight {
+  border-color: rgba(255, 87, 34, 0.35);
+}
+
+.tech-category {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-orange);
+  letter-spacing: 0.05em;
+  margin-bottom: 1.2rem;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.4rem 0.85rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.tag-accent {
+  background: rgba(255, 87, 34, 0.12);
+  border-color: rgba(255, 87, 34, 0.35);
+  color: #ffab91;
+  font-weight: 600;
+}
+
+/* Pure Liquid Glass Competencies Bar */
+.competencies-card {
+  background: var(--liquid-glass-gradient);
+  backdrop-filter: var(--liquid-glass-blur);
+  -webkit-backdrop-filter: var(--liquid-glass-blur);
+  border: var(--liquid-glass-border);
+  box-shadow: var(--liquid-glass-shadow);
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  transition: box-shadow 0.3s ease;
+}
+
+.competencies-card:hover {
+  box-shadow: var(--liquid-glass-shadow-hover);
+}
+
+.comp-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.comp-title {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.comp-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  background: rgba(255, 87, 34, 0.15);
+  color: #ff7043;
+}
+
+.comp-list {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  flex-wrap: wrap;
+}
+
+.comp-list .sep {
+  color: var(--color-orange);
+}
+
+/* Pure Liquid Glass Timeline / Experience */
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.timeline-item {
+  background: var(--liquid-glass-gradient);
+  backdrop-filter: var(--liquid-glass-blur);
+  -webkit-backdrop-filter: var(--liquid-glass-blur);
+  border: var(--liquid-glass-border);
+  box-shadow: var(--liquid-glass-shadow);
+  border-radius: 24px;
+  padding: 2.2rem;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 2rem;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 87, 34, 0.4);
+  box-shadow: var(--liquid-glass-shadow-hover);
+}
+
+.timeline-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.time-badge {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.role-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-orange);
+  letter-spacing: 0.05em;
+}
+
+.role-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.role-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.rating-pill {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 179, 0, 0.12);
+  border: 1px solid rgba(255, 179, 0, 0.3);
+  color: #ffb300;
+}
+
+.link-pill {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: #ff7043;
+  text-decoration: none;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 87, 34, 0.12);
+  border: 1px solid rgba(255, 87, 34, 0.25);
+  transition: background 0.2s ease;
+}
+
+.link-pill:hover {
+  background: rgba(255, 87, 34, 0.25);
+}
+
+.role-company {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.85rem;
+  letter-spacing: 0.03em;
+}
+
+.role-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+.role-bullets {
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+}
+
+/* Pure Liquid Glass Project Featured Cards */
+.projects-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.project-featured-card {
+  background: var(--liquid-glass-gradient);
+  backdrop-filter: var(--liquid-glass-blur);
+  -webkit-backdrop-filter: var(--liquid-glass-blur);
+  border: var(--liquid-glass-border);
+  box-shadow: var(--liquid-glass-shadow);
+  border-radius: 28px;
+  padding: 2.8rem;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.project-featured-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 87, 34, 0.45);
+  box-shadow: var(--liquid-glass-shadow-hover);
+}
+
+.proj-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.proj-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.proj-id {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-orange);
+}
+
+.award-pill {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(255, 179, 0, 0.12);
+  border: 1px solid rgba(255, 179, 0, 0.3);
+  color: #ffca28;
+}
+
+.badge-nominee {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(255, 87, 34, 0.15);
+  border: 1px solid rgba(255, 87, 34, 0.35);
+  color: #ff8a65;
+}
+
+.proj-name {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin-bottom: 0.3rem;
+}
+
+.proj-focus {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ff7043;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.proj-summary {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+  margin-bottom: 1.6rem;
+  max-width: 840px;
+}
+
+.proj-tech-row {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.tech-chip {
+  padding: 0.35rem 0.85rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.proj-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.proj-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  background: var(--liquid-glass-gradient);
+  border: var(--liquid-glass-border);
+  box-shadow: var(--liquid-glass-shadow);
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  backdrop-filter: var(--liquid-glass-blur);
+  transition: all 0.25s ease;
+}
+
+.proj-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--liquid-glass-shadow-hover);
+}
+
+.proj-btn-demo {
+  background: var(--color-orange-gradient);
+  border-color: transparent;
+  box-shadow: 0 4px 16px rgba(255, 87, 34, 0.35), inset 1px 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+.proj-btn-demo:hover {
+  box-shadow: 0 8px 24px rgba(255, 87, 34, 0.6);
+}
+
+/* Pure Liquid Glass Credentials Grid */
+.credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.cert-card {
+  background: var(--liquid-glass-gradient);
+  backdrop-filter: var(--liquid-glass-blur);
+  -webkit-backdrop-filter: var(--liquid-glass-blur);
+  border: var(--liquid-glass-border);
+  box-shadow: var(--liquid-glass-shadow);
+  border-radius: 22px;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 87, 34, 0.4);
+  box-shadow: var(--liquid-glass-shadow-hover);
+}
+
+.cert-highlight {
+  border-color: rgba(255, 87, 34, 0.35);
+}
+
+.cert-top-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #ff9800;
+  margin-bottom: 0.8rem;
+}
+
+.cert-ref {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-orange);
+  margin-bottom: 0.6rem;
+}
+
+.cert-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.6rem;
+}
+
+.cert-meta {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.cert-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ff7043;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color 0.2s ease;
+}
+
+.cert-link:hover {
+  color: #ffab91;
+}
+
+/* Pure Liquid Glass Contact Card Wrap */
+.contact-card-wrap {
+  background: var(--liquid-glass-gradient);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: var(--liquid-glass-border);
+  box-shadow: var(--liquid-glass-shadow);
+  border-radius: 32px;
+  padding: 3.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 4rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.contact-card-wrap:hover {
+  box-shadow: var(--liquid-glass-shadow-hover);
+}
+
+.contact-title {
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+.contact-subtitle {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.contact-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.detail-lbl {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-orange);
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+.detail-val {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a.detail-val:hover {
+  color: #ff7043;
+}
+
+.status-val {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #00e676;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00e676;
+  box-shadow: 0 0 10px #00e676;
+}
+
+/* Pure Liquid Glass Inputs */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.2), inset -1px -1px 2px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-orange);
+  box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.4), 0 0 16px rgba(255, 87, 34, 0.3);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.form-submit-btn {
+  width: 100%;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+/* Footer */
+.footer-section {
+  padding: 5rem 0 3rem;
+  background: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.footer-logo {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.footer-role {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.75rem;
+}
+
+.footer-avail {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #00e676;
+  font-weight: 700;
+}
+
+.footer-col-title {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-orange);
+  letter-spacing: 0.06em;
+  margin-bottom: 1.25rem;
+}
+
+.footer-links-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-link {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+}
+
+.footer-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-signature {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .hero-container-split {
+    grid-template-columns: 1.2fr 0.4fr 1fr;
+  }
+
+  .hero-stats-glass-bar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-container-split {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-center-space {
+    display: none;
+  }
+
+  .hero-right-col {
+    padding-left: 0;
+  }
+
+  .tech-grid,
+  .credentials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-card-wrap {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 2.5rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero-headline {
+    font-size: 2.5rem;
+  }
+
+  .hero-stats-glass-bar {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .tech-grid,
+  .credentials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .section-block {
+    padding: 4.5rem 0;
+  }
+}
